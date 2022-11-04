@@ -8,18 +8,67 @@
 // - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 // - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 
-// const eleSelect = document.querySelector('#difficulty') bottone scelta
+const eleSelect = document.querySelector('#difficulty') // bottone scelta
 const eleGrid = document.querySelector('.grid')
 
-for(let i=1; i <= 100; i++){
-
-    const eleCell = document.createElement('div');
-    eleCell.classList.add('cell');
-    eleCell.innerHTML += `${i}`;
-    eleGrid.append(eleCell);
 
 
-    eleCell.addEventListener('click', function(){
-        this.classList.toggle('active');
+eleSelect.addEventListener('change', function(){
+
+    // const eleList = document.querySelector('option')
+
+    eleGrid.innerHTML='';
+
+        if (eleSelect.value === 'easy'){
+            for(let i=1; i <= 100; i++){
+
+                const eleCell = document.createElement('div');
+                eleCell.classList.add('cell100');
+                eleCell.innerHTML += `${i}`;
+                eleGrid.append(eleCell);
+                
+                eleCell.addEventListener('click', function(){
+                    this.classList.toggle('active');
+                });
+            }
+        }   else if (eleSelect.value === 'medium'){
+            eleGrid.innerHTML='';
+            for(let i=1; i <= 81; i++){
+                
+                const eleCell = document.createElement('div');
+                eleCell.classList.add('cell81');
+                eleCell.innerHTML += `${i}`;
+                eleGrid.append(eleCell);                
+            
+                eleCell.addEventListener('click', function(){
+                    this.classList.toggle('active');
+                    });
+            }
+        } else if (eleSelect.value === 'hard'){
+            eleGrid.innerHTML='';
+            for(let i=1; i <= 49; i++){
+
+                const eleCell = document.createElement('div');
+                eleCell.classList.add('cell49');
+                eleCell.innerHTML += `${i}`;
+                eleGrid.append(eleCell);
+            
+            
+                eleCell.addEventListener('click', function(){
+                    this.classList.toggle('active');
+                    });
+            }
+        } 
     })
-}
+// for(let i=1; i <= 100; i++){
+
+//     const eleCell = document.createElement('div');
+//     eleCell.classList.add('cell');
+//     eleCell.innerHTML += `${i}`;
+//     eleGrid.append(eleCell);
+
+
+//     eleCell.addEventListener('click', function(){
+//         this.classList.toggle('active');
+//     })
+// }

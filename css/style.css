@@ -30,7 +30,7 @@ body{
     flex-wrap: wrap;
     border: 2px solid black;
 }
-.cell{
+.cell100{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,23 @@ body{
     height: calc(100% / 10);
     border: 2px solid black;
 }
-.cell.active{
+.cell81{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    border: 2px solid black;
+}
+.cell49{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    border: 2px solid black;
+}
+.cell100.active, .cell81.active, .cell49.active{
     background-color: blue;
     color: white;
 }
